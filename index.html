@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anju Shaji – Marketing Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="text-2xl font-bold">Anju Shaji</a>
+      <nav class="space-x-4 text-sm">
+        <a href="index.html" class="text-gray-700 hover:text-blue-500">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-500">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-500">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <section class="flex flex-col md:flex-row items-center gap-8 mb-16">
+      <img src="https://via.placeholder.com/150" alt="Anju Shaji" class="w-48 h-48 rounded-full object-cover shadow-md">
+      <div>
+        <h1 class="text-3xl font-bold mb-2">Anju Shaji – Marketing Portfolio</h1>
+        <p class="text-lg text-gray-600">Marketing Strategist &amp; Builder</p>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2 class="text-2xl font-semibold mb-6">Selected Work</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+          <h3 class="text-xl font-semibold mb-2">Loro Piana Brand Study</h3>
+          <p class="mb-4">Comprehensive brand, market, and competitive analysis for luxury fashion house Loro Piana, including strategic positioning and communication recommendations.</p>
+          <ul class="list-disc list-inside space-y-1 mb-4 text-sm">
+            <li><strong>Product scope:</strong> Ready‑to‑wear, leather goods, shoes, accessories, homewear, fabrics; womenswear ~60%, menswear ~40%.</li>
+            <li><strong>Pricing snapshots:</strong> Cashmere €380–€16.5k; Vicuña €1.8k–€34k; “Gift of Kings” €850–€14k; Leather €355–€5k; Baby Cashmere €6.2k–€26.1k; Silk €4k–€9.8k.</li>
+            <li><strong>Go‑to‑market:</strong> selective boutiques (e.g., Av. Montaigne), premium service &amp; events; strong online presence and multi‑channel consistency.</li>
+            <li><strong>Market context:</strong> Luxury goods revenue projected ~US$418.9B by 2028; France luxury fashion ~US$6.56B (2023) with ~83% offline sales.</li>
+            <li><strong>Opportunities:</strong> Asia presence (90+ stores) but no India store; youth segment growth; balance offline &amp; digital experiences.</li>
+          </ul>
+          <div class="mt-auto">
+            <a href="loro-piana.html" class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">View full case study</a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+          <div class="mb-4">
+            <video controls class="rounded">
+              <source src="https://146707808.hs-sites-eu1.com/mnt/data/Vinted%20Realities.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Vinted Realities</h3>
+          <p class="mb-4">Marketing concept video showcasing innovative storytelling for fashion resale platform Vinted, blending creativity with brand messaging to engage Gen Z audiences.</p>
+          <div class="mt-auto space-x-4">
+            <a href="https://146707808.hs-sites-eu1.com/mnt/data/Vinted%20Realities.mp4" target="_blank" class="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Open video</a>
+            <a href="vinted.html" class="inline-block px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800">View full case study</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t mt-16">
+    <div class="max-w-5xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
+      © <span id="year"></span> Anju Shaji · Built with modern HTML &amp; Tailwind CSS
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
