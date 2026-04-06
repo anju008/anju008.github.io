@@ -1,0 +1,9 @@
+/* Patched static export: visible hero/tiles without Webflow IX */
+.home-page-heading {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.top-section.home-page .w-clearfix > div[data-w-id] {
+  opacity: 1 !important;
+  transform: none !important;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About · Growth Marketing Portfolio</title>
+  <meta name="description" content="About me: engineering mindset + growth marketing across paid media, CRM, SEO, and analytics." />
+  <link rel="icon" href="images/317d03f0-564f-415e-95e6-11cf01b317aa.ico" />
+  <link rel="apple-touch-icon" href="images/5c6a41e4-593e-48bf-b576-b80e593943e0.png" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>ANJUA SHAJI<br /><small>Growth Marketing</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a class="btn small primary" href="#" data-open-contact>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>About me</h1>
+          <p>
+            I’m a marketer with an engineering background and an international marketing degree from SKEMA Business School.
+            I’m most engaged when there’s a clear question to answer and enough data to prove what’s working.
+          </p>
+          <div class="pillrow">
+            <span class="pill"><span class="dot ok" aria-hidden="true"></span>Engineer’s mindset</span>
+            <span class="pill"><span class="dot" aria-hidden="true"></span>Creative + analytical</span>
+            <span class="pill"><span class="dot warn" aria-hidden="true"></span>Measurable growth</span>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="portfolio.html">See work</a>
+            <a class="btn ghost" href="#" data-open-contact>Get in touch</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Portrait">
+          <img src="images/f66ae592-cef5-4f48-b73e-ac703a14ed5a.jpeg" alt="Portrait" style="display:block;width:100%;height:100%;object-fit:cover;max-height:420px;" />
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="callout">
+          <h3>How I think</h3>
+          <p>
+            Growth marketing is where creativity meets measurement. When something underperforms, I look for the leak:
+            channel mix, on-site conversion, or retention—then design tests that answer one question at a time.
+          </p>
+          <ul class="list">
+            <li><strong>Why</strong> did this campaign underperform?</li>
+            <li><strong>Where</strong> is the funnel leaking?</li>
+            <li><strong>What</strong> is the highest ROI test next?</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h3>Experience snapshot</h3>
+          <p>
+            I’ve coordinated product launch campaigns in Nice, run influencer partnerships for a London-focused startup,
+            and managed client relationships across time zones for a Japanese tech company—each one sharpening a different layer
+            of strategy and execution.
+          </p>
+          <ul class="list">
+            <li><strong>Paid media</strong>: strategy, measurement, creative iteration</li>
+            <li><strong>CRM</strong>: flows, segmentation, lifecycle calendars</li>
+            <li><strong>SEO</strong>: intent mapping, quick wins, sustainable growth</li>
+            <li><strong>Analytics</strong>: dashboards, SQL, decision-ready reporting</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span><strong>ANJUA SHAJI</strong><br /><small>Based in Nice · Open to growth roles</small></span>
+        </div>
+        <small>Let’s build something measurable.</small>
+      </div>
+      <div class="footlinks" aria-label="Contact links">
+        <a href="mailto:anjuhaisc@gmail.com">anjuhaisc@gmail.com</a>
+        <a href="tel:+33753345914">+33 0753345914</a>
+        <a href="portfolio.html">Case studies</a>
+        <a href="#" data-open-contact>Message</a>
+        <a href="https://www.linkedin.com/in/anju-shaji-268652188/">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" data-modal="contact" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Contact form">
+    <div class="modal-backdrop" data-modal-backdrop></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h2>Get in touch</h2>
+          <p>This opens an email draft so it works offline too.</p>
+        </div>
+        <button class="modal-close" type="button" aria-label="Close" data-close-contact>✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="form" data-contact-form data-mailto="anjuhaisc@gmail.com">
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input id="c-name" name="name" autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+          </div>
+          <div class="field">
+            <label for="c-company">Company</label>
+            <input id="c-company" name="company" autocomplete="organization" placeholder="Brand / agency" />
+          </div>
+          <div class="field">
+            <label for="c-details">Details</label>
+            <textarea id="c-details" name="details" placeholder="What are you trying to grow?"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="button" data-close-contact>Cancel</button>
+            <button class="btn primary" type="submit">Open email</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
