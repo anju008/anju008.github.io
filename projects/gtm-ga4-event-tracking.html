@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GTM &amp; GA4 Event Tracking Implementation · Case Study</title>
+  <meta name="description" content="Case study: building a complete GTM + GA4 event tracking implementation from scratch for a portfolio website, with a measurement plan, QA, and version-controlled publishing." />
+  <link rel="icon" href="../images/317d03f0-564f-415e-95e6-11cf01b317aa.ico" />
+  <link rel="apple-touch-icon" href="../images/5c6a41e4-593e-48bf-b576-b80e593943e0.png" />
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>ANJU SHAJI<br /><small>Growth Marketing</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../portfolio.html" aria-current="page">Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="crumbs">
+            <a href="../portfolio.html">Portfolio</a>
+            <span aria-hidden="true">/</span>
+            <span>Case study</span>
+          </div>
+          <h1>GTM &amp; GA4 Event Tracking Implementation</h1>
+          <p>
+            For this project, I built a complete analytics tracking system for a portfolio website from scratch, without touching any website code.
+            Using Google Tag Manager and Google Analytics 4, I went from zero tracking to a fully published, version-controlled measurement setup.
+          </p>
+          <div class="pillrow">
+            <span class="pill"><span class="dot ok" aria-hidden="true"></span>Google Tag Manager</span>
+            <span class="pill"><span class="dot" aria-hidden="true"></span>Google Analytics 4</span>
+            <span class="pill"><span class="dot warn" aria-hidden="true"></span>Measurement planning</span>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="../portfolio.html">Back to portfolio</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Cover">
+          <img
+            src="../images/2_business%20goal.png"
+            alt="Events tracking table overview (12 events, priorities, parameters defined)"
+            style="display:block;width:100%;height:100%;object-fit:contain;max-height:420px;background:#fff;"
+          />
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container panel prose">
+        <h2>Project summary</h2>
+        <p><strong>Tools used:</strong> Google Tag Manager · Google Analytics 4 · Canva · GitHub</p>
+        <p><strong>Project type:</strong> Analytics implementation · Event tracking · QA + publishing</p>
+
+        <h2>Planning before building</h2>
+        <p>
+          Before writing a single tag, I created a 12-event measurement plan mapping each business goal to a specific GA4 event, trigger,
+          and set of parameters. This step forced clarity. For example, a <code>generate_lead</code> event firing on form submission tells a recruiter
+          that someone took direct hiring action, while <code>file_download</code> tracks CV engagement.
+        </p>
+        <p>
+          Defining the <em>why</em> behind each event upfront made the implementation fast and organised.
+        </p>
+
+        <h3>Measurement plan (visual)</h3>
+        <div class="media-grid">
+          <figure class="figure">
+            <img src="../images/1_business%20goal.png" alt="Measurement plan excerpt mapping business goals to GA4 events and parameters" />
+            <figcaption>Measurement plan excerpt: business goals → events → parameters → where to validate in GA4.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/3.png" alt="Measurement plan table showing events, triggers, parameters, and GA4 destinations (rows 1-6)" />
+            <figcaption>Measurement plan table (events 1 to 6): event naming + triggers + parameters.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/4.png" alt="Measurement plan table showing events, triggers, parameters, and GA4 destinations (rows 7-12)" />
+            <figcaption>Measurement plan table (events 7 to 12): engagement + context events to interpret performance.</figcaption>
+          </figure>
+        </div>
+
+        <h2>Building the tags in GTM</h2>
+        <p>
+          With the plan defined, I set up a GTM container and built 3 tags covering the core user journeys.
+          The first was a Google Tag (GA4 Page View) connected to my GA4 Measurement ID <code>G-R9W07GTBCX</code>,
+          firing on every page load via an All Pages trigger.
+        </p>
+        <p>
+          The second was a GA4 Event tag (GA4 Form Submit) tracking the <code>generate_lead</code> event with custom parameters (<code>form_name</code>
+          and <code>page_title</code>), firing only when a contact form is submitted.
+        </p>
+        <p>
+          The third was another GA4 Event tag (GA4 CTA Click) tracking the <code>click_cta</code> event with <code>button_text</code>
+          and <code>page_title</code> parameters, firing on button clicks.
+        </p>
+
+        <h3>Tag configurations (screenshots)</h3>
+        <div class="media-grid">
+          <figure class="figure">
+            <img src="../images/project22.PNG" alt="GTM Tag 1: Google Tag configuration with GA4 Measurement ID and All Pages trigger" />
+            <figcaption>Tag 1: GA4 Page View (Google Tag), firing on All Pages.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/Project23.PNG" alt="GTM Tag 2: GA4 Event tag for generate_lead with parameters form_name and page_title" />
+            <figcaption>Tag 2: Form Submit event (<code>generate_lead</code>) with custom parameters.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/Project24.PNG" alt="GTM Tag 3: GA4 Event tag for click_cta with parameters button_text and page_title" />
+            <figcaption>Tag 3: CTA Click event (<code>click_cta</code>) with click text + page title parameters.</figcaption>
+          </figure>
+        </div>
+
+        <h2>QA and publishing</h2>
+        <p>
+          Before publishing, I validated the workspace directly in GTM, resolving variable errors and confirming each tag had the correct
+          trigger and parameters. The container was then published as Version 2, creating a permanent record of the full implementation with
+          3 tags, 2 triggers, and 8 variables live.
+        </p>
+
+        <div class="media-grid">
+          <figure class="figure">
+            <img src="../images/Business%20Goal.png" alt="QA checklist style table showing tags created, trigger set, parameters defined, and live status" />
+            <figcaption>QA checklist snapshot: confirming tags, triggers, and parameters are correctly configured.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/Project21.PNG" alt="GTM version summary showing 3 tags, 2 triggers, 8 variables published" />
+            <figcaption>Version summary: published with 3 tags, 2 triggers, and 8 variables.</figcaption>
+          </figure>
+        </div>
+
+        <h2>What this project taught me</h2>
+        <p>
+          Working through this end-to-end taught me that GTM and GA4 are fundamentally different tools. One deploys tracking, the other stores
+          and analyses it, and confusing the two is one of the most common mistakes in analytics setups.
+        </p>
+        <p>
+          I also learned that built-in GTM variables are off by default and must be manually enabled, and that measurement planning before
+          implementation is what separates a clean analytics setup from a messy one. Publishing with version control means any change is reversible,
+          which is a critical habit in real client work.
+        </p>
+
+        <h3>Artifacts</h3>
+        <ul>
+          <li><a href="https://github.com/anju008/Portfolio/blob/main/Project%202">Full GTM container JSON exported and available on GitHub</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span><strong>ANJU SHAJI</strong><br /><small>Digital Marketing · E-commerce</small></span>
+        </div>
+        <small>Want a clean measurement setup? I can help.</small>
+      </div>
+      <div class="footlinks" aria-label="Contact links">
+        <a href="mailto:anjuhaisc@gmail.com">anjuhaisc@gmail.com</a>
+        <a href="tel:+33753345914">+33 0753345914</a>
+        <a href="../portfolio.html">More case studies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+</body>
+</html>
