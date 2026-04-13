@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopify Email Marketing · Luxury E-commerce Case Study</title>
+  <meta name="description" content="Case study: designing a full Klaviyo email marketing system for a luxury intimate wellness brand — welcome, browse abandonment, cart abandonment, post-purchase, and winback flows." />
+  <link rel="icon" href="../images/317d03f0-564f-415e-95e6-11cf01b317aa.ico" />
+  <link rel="apple-touch-icon" href="../images/5c6a41e4-593e-48bf-b576-b80e593943e0.png" />
+  <link rel="stylesheet" href="../css/site.css" />
+  <style>
+    /* Mermaid diagram container */
+    .mermaid-wrap {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: #1a2540;
+      padding: 24px 16px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    .mermaid-wrap .mermaid {
+      display: flex;
+      justify-content: center;
+    }
+    .mermaid-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Base font for all mermaid labels */
+    .mermaid-wrap svg text,
+    .mermaid-wrap svg .nodeLabel,
+    .mermaid-wrap svg foreignObject div {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial !important;
+    }
+    .flow-section {
+      margin-bottom: 36px;
+    }
+    .flow-section h3 {
+      font-size: 17px;
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .flow-section p.flow-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0 0 10px;
+    }
+    .principle-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .principle-list li {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .principle-list li::before {
+      content: "—";
+      margin-right: 8px;
+      color: var(--brand2);
+    }
+    .email-drafts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 640px) {
+      .email-drafts-grid { grid-template-columns: 1fr; }
+    }
+    .email-draft-card {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .email-draft-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .email-draft-card figcaption {
+      padding: 10px 14px 12px;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+    .insight-box {
+      padding: 16px 18px;
+      border-radius: 14px;
+      border-left: 3px solid var(--brand);
+      background: rgba(124,92,255,.08);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 16px 0;
+    }
+    .insight-box strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>ANJU SHAJI<br /><small>Growth Marketing</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../portfolio.html" aria-current="page">Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="crumbs">
+            <a href="../portfolio.html">Portfolio</a>
+            <span aria-hidden="true">/</span>
+            <span>Case study</span>
+          </div>
+          <h1>Shopify Email Marketing for a Luxury E-commerce Brand</h1>
+          <p>
+            Designing a complete Klaviyo lifecycle email system for Gapianne — a premium intimate wellness brand —
+            where the goal was trust, not urgency. Five flows built to feel as refined as the product itself.
+          </p>
+          <div class="pillrow">
+            <span class="pill"><span class="dot ok" aria-hidden="true"></span>Klaviyo</span>
+            <span class="pill"><span class="dot" aria-hidden="true"></span>Lifecycle flows</span>
+            <span class="pill"><span class="dot warn" aria-hidden="true"></span>Luxury CRM</span>
+            <span class="pill"><span class="dot" aria-hidden="true"></span>A/B testing</span>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="../portfolio.html">Back to portfolio</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Cover">
+          <img
+            src="../images/welcome%20email.PNG"
+            alt="Welcome email design for Gapianne luxury brand"
+            style="display:block;width:100%;height:100%;object-fit:cover;max-height:420px;"
+          />
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container panel prose">
+
+        <h2>How I approach luxury email marketing differently</h2>
+        <p>
+          Luxury email marketing is not about saying more. It is about having the confidence to say less.
+        </p>
+        <p>
+          Standard brands use urgency, repetition, and offers to push decisions. Premium brands earn trust by staying composed —
+          they write shorter copy, leave more white space, and never chase the customer.
+        </p>
+
+        <ul class="principle-list">
+          <li>No countdown timers or stock scarcity tactics</li>
+          <li>No discount in the first cart abandonment email — patience signals confidence</li>
+          <li>One clear action per email, never two competing CTAs</li>
+          <li>Copy that sounds like a person wrote it, not a marketing team</li>
+          <li>Design that gives the content room to breathe</li>
+        </ul>
+
+        <div class="insight-box">
+          The best luxury email makes the reader feel that the brand barely needed to send it — and that is exactly why she opens the next one.
+        </div>
+
+        <h2>MIRO Flows</h2>
+        <p>Each flow below was mapped in Miro before being built in Klaviyo. A/B test hypotheses and KPI targets are embedded directly into the flow diagrams.</p>
+
+        <!-- Welcome Flow -->
+        <div class="flow-section">
+          <h3>Welcome Flow</h3>
+          <p class="flow-desc">
+            <strong>Goal:</strong> Make a strong first impression and establish brand trust before any product push.
+            The Welcome email does not try to sell anything. It introduces the brand — who Gapianne is, what they believe in,
+            and what sets their approach to intimate wellness apart. No discount code, no product carousel, no urgency.
+            A premium brand earns attention before asking for anything.
+          </p>
+          <div class="mermaid-wrap">
+            <pre class="mermaid">
+graph TD
+    Trigger["New subscriber<br>signs up"]
+    E1["EMAIL 1 - Send<br>Immediately<br>Subject: Welcome to<br>Gapianne<br>Goal: Brand intro +<br>story"]
+    W1(["wait 2 days"])
+    E2["EMAIL 2 - Day 2<br>Subject: Our best products<br>Goal: Showcase + social<br>proof"]
+    W2(["wait 2 days"])
+    E3["EMAIL 3 - Day 4<br>Subject: Here's 10% off<br>Goal: Push first purchase"]
+    Cond{"Did they purchase?"}
+    OutY["Flow 4<br>Post-purch"]
+    OutN["Flow 5 Winback after<br>90 days"]
+
+    Trigger --> E1
+    E1 --> W1
+    W1 --> E2
+    E2 --> W2
+    W2 --> E3
+    E3 --> Cond
+    Cond -- YES --> OutY
+    Cond -- NO --> OutN
+
+    AB1["A/B TEST — Email 1<br>Variant A: 'Welcome. You've found something different.'<br>Variant B: 'This is where it changes.'<br>Hypothesis: Variant B gets +8-10pp higher open rate<br>because it speaks to the customer's outcome, not the brand<br>Success metric: Open rate after 7 days, min. 500 sends"]
+    AB2["A/B TEST — Email 2<br>Variant A: 'Our most loved products this month'<br>Variant B: 'What 3,000 women chose for their body'<br>Hypothesis: Variant B gets higher CTR due to social proof<br>Success metric: Click-through rate after 5 days"]
+    AB3["A/B TEST — Email 3<br>Variant A: 'A little gift for you — 10% off your first order'<br>Variant B: 'Still thinking? Here's 10% to help you decide'<br>Hypothesis: Variant B gets higher CVR due to empathy-led tone<br>Success metric: Purchase conversion rate after 7 days"]
+    KPI["Welcome Flow - KPI Targets<br>Email 1 Open Rate: target 52% (industry avg 45%)<br>Email 2 CTR: target 5% (industry avg 3%)<br>Email 3 CVR: target 3% (industry avg 1.5%)<br>Source: Klaviyo Benchmark Report"]
+
+    E1 -.-> AB1
+    E2 -.-> AB2
+    E3 -.-> AB3
+    OutN ~~~ KPI
+
+    style Trigger fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E1 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E2 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E3 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style OutY fill:#163a28,stroke:#3a8050,color:#a6e87a
+    style OutN fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style AB1 fill:#ffa6e9,stroke:none,color:#000
+    style AB2 fill:#ffa6e9,stroke:none,color:#000
+    style AB3 fill:#ffa6e9,stroke:none,color:#000
+    style KPI fill:#a6e87a,stroke:none,color:#000
+    style Cond fill:#fffde7,stroke:#ffd54f,stroke-width:2px,color:#333
+    style W1 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+    style W2 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+            </pre>
+          </div>
+        </div>
+
+        <!-- Browse Abandonment Flow -->
+        <div class="flow-section">
+          <h3>Browse Abandonment Flow (Optional)</h3>
+          <p class="flow-desc">
+            <strong>Trigger:</strong> Customer views a product page but does not add to cart.<br />
+            <strong>Goal:</strong> Bring the customer back to the product without pressure — using curiosity and social proof rather than urgency.
+          </p>
+          <div class="mermaid-wrap">
+            <pre class="mermaid">
+graph TD
+    Trigger["Viewed a<br>product page —<br>no cart added"]
+    E1["EMAIL 1 — Send<br>after 1 hour<br>Subject: 'Still<br>thinking about it?'<br>Goal: Bring them<br>back to the product"]
+    W1(["wait 1 day"])
+    E2["EMAIL 2 - Day 2<br>Subject: 'Here's what others<br>are saying'<br>Goal: Social proof to<br>overcome hesitation"]
+    Cond{"Did they add to cart?"}
+    OutY["Flow 3"]
+    OutN["Exit flow"]
+
+    Trigger --> E1
+    E1 --> W1
+    W1 --> E2
+    E2 --> Cond
+    Cond -- YES --> OutY
+    Cond -- NO --> OutN
+
+    AB1["A/B TEST — Email 1<br>Variant A: 'Still thinking about it?'<br>Variant B: 'This one's popular — just so you know'<br>Hypothesis: Variant B creates urgency via social proof<br>Metric: CTR after 24 hours"]
+    AB2["A/B TEST — Email 2<br>Variant A: 'Here's what others are saying'<br>Variant B: '4.8 stars — here's why women love it'<br>Hypothesis: Variant B is more specific and credible<br>Metric: CTR after 48 hours"]
+    KPI["KPI Targets<br>Email 1 CTR: target 4% (industry avg 2.5%)<br>Email 2 CTR: target 3% (industry avg 2%)<br>Source: Klaviyo Benchmark Report"]
+
+    E1 -.-> AB1
+    E2 -.-> AB2
+    OutN ~~~ KPI
+
+    style Trigger fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E1 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E2 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style OutY fill:#163a28,stroke:#3a8050,color:#a6e87a
+    style OutN fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style AB1 fill:#ffa6e9,stroke:none,color:#000
+    style AB2 fill:#ffa6e9,stroke:none,color:#000
+    style KPI fill:#a6e87a,stroke:none,color:#000
+    style Cond fill:#fffde7,stroke:#ffd54f,stroke-width:2px,color:#333
+    style W1 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+            </pre>
+          </div>
+        </div>
+
+        <!-- Cart Abandonment Flow -->
+        <div class="flow-section">
+          <h3>Cart Abandonment Flow</h3>
+          <p class="flow-desc">
+            <strong>Trigger:</strong> Customer adds a product to cart and begins checkout but does not complete the purchase.<br />
+            <strong>Goal:</strong> Bring the customer back to complete her order, without pressure, without tactics.
+            The Cart Abandonment email is minimal by design: one clean product image, two short sentences of copy, and one button — "Return to your cart."
+            No countdown timer, no "Only 2 left in stock," and no discount offered.
+            Urgency and scarcity are mass-market tactics. They work by creating anxiety, and anxiety is the opposite of how a premium brand should make its customers feel.
+          </p>
+          <div class="mermaid-wrap">
+            <pre class="mermaid">
+graph TD
+    Trigger["Added to cart —<br>no purchase"]
+    E1["EMAIL 1 — Send<br>after 1 hour<br>Subject: 'You left<br>something behind'<br>Goal: Remind +<br>create urgency"]
+    W1(["wait 1 day"])
+    E2["EMAIL 2 - Day 2<br>Subject: 'Still yours, but not<br>for long'<br>Goal: Scarcity nudge"]
+    W2(["Wait 2 days"])
+    E3["A/B TEST- Email 3<br>Subject: 'Last chance — here's<br>10% off'<br>Goal: Final discount to convert"]
+    Cond{"Did they purchase?"}
+    OutY["Flow 4"]
+    OutN["Flow 5 after 90 days"]
+
+    Trigger --> E1
+    E1 --> W1
+    W1 --> E2
+    E2 --> W2
+    W2 --> E3
+    E3 --> Cond
+    Cond -- YES --> OutY
+    Cond -- NO --> OutN
+
+    AB1["A/B TEST — Email 1<br>Variant A: 'You left something behind'<br>Variant B: 'Your cart is waiting for you'<br>Hypothesis: Variant A is more emotional and personal<br>Metric: Open rate after 1 hour"]
+    AB2["A/B TEST — Email 2<br>Variant A: 'Last chance — here's 10% off'<br>Variant B: 'We saved your cart + a surprise inside'<br>Hypothesis: Variant B creates curiosity, higher open rate<br>Metric: CVR after 7 days"]
+    KPI["KPI Targets<br>Recovery rate: target 10% (industry avg 5–8%)<br>Email 1 Open Rate: target 45%<br>Email 3 CVR: target 5%<br>Source: Klaviyo Benchmark Report"]
+
+    E1 -.-> AB1
+    E2 -.-> AB2
+    OutN ~~~ KPI
+
+    style Trigger fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E1 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E2 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E3 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style OutY fill:#163a28,stroke:#3a8050,color:#a6e87a
+    style OutN fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style AB1 fill:#ffa6e9,stroke:none,color:#000
+    style AB2 fill:#ffa6e9,stroke:none,color:#000
+    style KPI fill:#a6e87a,stroke:none,color:#000
+    style Cond fill:#fffde7,stroke:#ffd54f,stroke-width:2px,color:#333
+    style W1 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+    style W2 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+            </pre>
+          </div>
+        </div>
+
+        <!-- Post Purchase Flow -->
+        <div class="flow-section">
+          <h3>Post Purchase Flow</h3>
+          <p class="flow-desc">
+            <strong>Trigger:</strong> Customer completes a purchase.<br />
+            <strong>Goal:</strong> Reassure the customer, confirm her order, and make her feel her decision was the right one.
+            The Post Purchase email is a single warm confirmation. After a purchase, the customer needs reassurance, not a cross-sell.
+            Sending a product recommendation immediately after checkout feels transactional and cheap.
+            The post-purchase moment is about cementing trust and loyalty.
+          </p>
+          <div class="mermaid-wrap">
+            <pre class="mermaid">
+graph TD
+    Trigger["Order<br>confirmed"]
+    E1["EMAIL 1 — Send<br>immediately<br>Subject: 'Your order<br>is on its way'<br>Goal: Confirm +<br>delight + set<br>expectations"]
+    W1(["wait 7 days"])
+    E2["EMAIL 2 - Day 7<br>Subject: 'How are you<br>finding it? Leave a review'<br>Goal: Get review + introduce<br>next product"]
+    Cond{"Did they buy again or leave<br>review?"}
+    OutY["Loyal customer"]
+    OutN["Flow 5 after 90 days"]
+
+    Trigger --> E1
+    E1 --> W1
+    W1 --> E2
+    E2 --> Cond
+    Cond -- YES --> OutY
+    Cond -- NO --> OutN
+
+    AB1["A/B TEST — Email 1<br>Variant A: 'Your order is on its way'<br>Variant B: 'It's coming — and we think you'll love it'<br>Hypothesis: Variant B feels more personal and anticipation-building<br>Metric: Open rate after 1 hour"]
+    AB2["A/B TEST — Email 2<br>Variant A: 'How are you finding it? Leave a review'<br>Variant B: 'Your honest opinion matters to us'<br>Hypothesis: Variant B feels less transactional, higher review rate<br>Metric: Review submission rate after 7 days"]
+    KPI["KPI Targets<br>Email 1 Open Rate: target 60% (highest of all flows — buyer is most engaged)<br>Repeat CVR: target 15% (industry avg 10%)<br>Review rate: target 8%<br>Source: Klaviyo Benchmark Report"]
+
+    E1 -.-> AB1
+    E2 -.-> AB2
+    OutN ~~~ KPI
+
+    style Trigger fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E1 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E2 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style OutY fill:#163a28,stroke:#3a8050,color:#a6e87a
+    style OutN fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style AB1 fill:#ffa6e9,stroke:none,color:#000
+    style AB2 fill:#ffa6e9,stroke:none,color:#000
+    style KPI fill:#a6e87a,stroke:none,color:#000
+    style Cond fill:#fffde7,stroke:#ffd54f,stroke-width:2px,color:#333
+    style W1 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+            </pre>
+          </div>
+        </div>
+
+        <!-- Win Back Flow -->
+        <div class="flow-section">
+          <h3>Win Back Flow (Optional)</h3>
+          <p class="flow-desc">
+            <strong>Trigger:</strong> No purchase in 90 days.<br />
+            <strong>Goal:</strong> Re-engage lapsed customers with curiosity and, as a last resort, a final offer — before suppressing to protect deliverability.
+          </p>
+          <div class="mermaid-wrap">
+            <pre class="mermaid">
+graph TD
+    Trigger["No purchase in<br>90 days"]
+    E1["EMAIL 1 — Send on Day 90<br>Subject: 'We miss you — here's<br>what's new'<br>Goal: Re-engage with new<br>products"]
+    W1(["wait 5 days"])
+    E2["EMAIL 2 — Day 95<br>Subject: 'Still here — here's<br>15% just for you'<br>Goal: Final offer to win them<br>back"]
+    Cond{"Did they purchase?"}
+    OutY["Flow 4"]
+    OutN["Unsubscribe or<br>suppress"]
+
+    Trigger --> E1
+    E1 --> W1
+    W1 --> E2
+    E2 --> Cond
+    Cond -- YES --> OutY
+    Cond -- NO --> OutN
+
+    AB1["A/B TEST — Email 1<br>Variant A: 'We miss you — here's what's new'<br>Variant B: 'It's been a while — look what's changed at Gapianne'<br>Hypothesis: Variant B is more curiosity-driven, higher open rate<br>Metric: Open rate after 5 days"]
+    AB2["A/B TEST — Email 2<br>Variant A: 'Still here — here's 15% just for you'<br>Variant B: 'One last thing before you go'<br>Hypothesis: Variant B feels less salesy, reduces unsubscribes<br>Metric: CVR + unsubscribe rate after 7 days"]
+    KPI["KPI Targets<br>Email 1 Open Rate: target 22% (industry avg 15%)<br>CVR: target 5% (industry avg 2–3%)<br>Unsubscribe rate: keep below 0.5%<br>Source: Klaviyo Benchmark Report"]
+
+    E1 -.-> AB1
+    E2 -.-> AB2
+    OutN ~~~ KPI
+
+    style Trigger fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E1 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style E2 fill:#1e3a5f,stroke:#3a5080,color:#EAF0FF
+    style OutY fill:#163a28,stroke:#3a8050,color:#a6e87a
+    style OutN fill:#3a1e1e,stroke:#803a3a,color:#ffb3b3
+    style AB1 fill:#ffa6e9,stroke:none,color:#000
+    style AB2 fill:#ffa6e9,stroke:none,color:#000
+    style KPI fill:#a6e87a,stroke:none,color:#000
+    style Cond fill:#fffde7,stroke:#ffd54f,stroke-width:2px,color:#333
+    style W1 fill:#1a3560,stroke:#64b5f6,stroke-width:2px,color:#64b5f6
+            </pre>
+          </div>
+        </div>
+
+        <h2>Email Drafts Using Klaviyo</h2>
+        <p>
+          I designed these emails to support a premium brand experience by keeping the messaging calm, minimal, and intentional at every step.
+          The welcome email focuses on brand introduction rather than selling, so the first interaction feels warm and editorial instead of promotional.
+          The cart abandonment email uses one clean product image, short copy, and a single CTA to gently remind the customer without pressure, urgency,
+          or discount tactics that can feel too aggressive for a premium brand. The post-purchase email is written as a simple confirmation and thank-you message,
+          because after someone buys, the brand should reassure them and strengthen trust rather than immediately try to sell again.
+          Across all emails, I kept the layout airy, the copy restrained, and the tone composed so the brand feels thoughtful, confident, and high-end.
+        </p>
+
+        <div class="email-drafts-grid">
+          <figure class="email-draft-card">
+            <img src="../images/welcome%20email.PNG" alt="Welcome email design — calm, editorial introduction to Gapianne with no discount or product push" />
+            <figcaption>Welcome Mail — Brand introduction, no selling. Warm, editorial tone.</figcaption>
+          </figure>
+
+          <figure class="email-draft-card">
+            <img src="../images/browse%20abandonment%20mail.PNG" alt="Browse abandonment email — minimal reminder with social proof, no urgency" />
+            <figcaption>Browse Abandonment Mail (Optional) — Social proof over urgency.</figcaption>
+          </figure>
+
+          <figure class="email-draft-card">
+            <img src="../images/cart%20abandonment%20mail.PNG" alt="Cart abandonment email — one product image, two lines of copy, single CTA with no countdown or discount" />
+            <figcaption>Cart Abandonment Mail — Single CTA, no countdown, no discount. Composed confidence.</figcaption>
+          </figure>
+
+          <figure class="email-draft-card">
+            <img src="../images/post%20Purchase%20mail.PNG" alt="Post purchase email — warm confirmation and welcome message, no cross-sell" />
+            <figcaption>Post Purchase Mail — Reassurance and welcome, not a cross-sell.</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span><strong>ANJU SHAJI</strong><br /><small>Digital Marketing · E-commerce</small></span>
+        </div>
+        <small>Want a lifecycle email system that matches your brand's positioning?</small>
+      </div>
+      <div class="footlinks" aria-label="Contact links">
+        <a href="mailto:anjuhaisc@gmail.com">anjuhaisc@gmail.com</a>
+        <a href="tel:+33753345914">+33 0753345914</a>
+        <a href="../portfolio.html">More case studies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'base',
+      flowchart: { htmlLabels: true, curve: 'basis' },
+      themeVariables: {
+        darkMode: false,
+        background: '#1a2540',
+        primaryColor: '#1e3a5f',
+        primaryTextColor: '#EAF0FF',
+        primaryBorderColor: '#3a5080',
+        lineColor: '#8892b0',
+        secondaryColor: '#162035',
+        tertiaryColor: '#162035',
+        nodeBorder: '#3a5080',
+        clusterBkg: '#162035',
+        titleColor: '#EAF0FF',
+        edgeLabelBackground: '#1a2540',
+        fontFamily: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial',
+        fontSize: '13px'
+      }
+    });
+
+    // Map node-name substrings → text colour
+    // Applied after render so inline styles override anything Mermaid injects.
+    const NODE_COLORS = [
+      { key: 'flowchart-AB',      color: '#111111' },
+      { key: 'flowchart-KPI',     color: '#111111' },
+      { key: 'flowchart-Cond',    color: '#333333' },
+      { key: 'flowchart-W1',      color: '#64b5f6' },
+      { key: 'flowchart-W2',      color: '#64b5f6' },
+      { key: 'flowchart-Trigger', color: '#EAF0FF' },
+      { key: 'flowchart-E1',      color: '#EAF0FF' },
+      { key: 'flowchart-E2',      color: '#EAF0FF' },
+      { key: 'flowchart-E3',      color: '#EAF0FF' },
+      { key: 'flowchart-OutY',    color: '#a6e87a' },
+      { key: 'flowchart-OutN',    color: '#EAF0FF' },
+    ];
+
+    function applyNodeTextColors() {
+      document.querySelectorAll('g[id*="flowchart-"]').forEach(g => {
+        for (const { key, color } of NODE_COLORS) {
+          if (g.id.includes(key)) {
+            g.querySelectorAll('.nodeLabel, foreignObject div, foreignObject p, foreignObject span').forEach(el => {
+              el.style.setProperty('color', color, 'important');
+            });
+            break;
+          }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await mermaid.run({ querySelector: '.mermaid' });
+      applyNodeTextColors();
+    });
+  </script>
+</body>
+</html>
